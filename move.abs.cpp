@@ -1,9 +1,5 @@
-#ifndef ID
-#error No ID given for modbus slave!
-#else
-	
 #include <iostream>
-#include "modbus.h"
+#include "common.h"
 
 using namespace std;
 
@@ -16,13 +12,7 @@ int main(int argc, char **argv){
 	int pos = atoi(argv[1]);
 	
     // create a modbus object
-    modbus mb = modbus("192.168.1.221", 502);
-
-    // set slave id
-    mb.modbus_set_slave_id(ID);
-
-    // connect with the server
-    mb.modbus_connect();
+    common_modbus mb;
 	
     mb.modbus_write_register(125, 0);
     mb.modbus_write_register(125, 128);
@@ -35,8 +25,5 @@ int main(int argc, char **argv){
 	mb.modbus_write_register(125,0);
 	mb.modbus_write_register(125,8);
 
-    // close connection and free the memory
-    mb.modbus_close();
     return 0;
 }
-#endif
