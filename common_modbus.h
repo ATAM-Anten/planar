@@ -1,5 +1,5 @@
-#ifndef COMMON_H
-#define COMMON_H
+#ifndef COMMON_MODBUS_H
+#define COMMON_MODBUS_H
 
 #ifndef ID
 #error No ID given for modbus slave!
