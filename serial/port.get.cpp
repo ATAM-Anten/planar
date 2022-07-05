@@ -9,6 +9,6 @@ int main(int argc, char **argv){
     if(argc <2){
         cerr << "At least 1 arguments are required!";
     }
-    cout << "Port: COM" << getPortIni(string(argv[1])) << endl;
+    cout << "Port: COM" << getPortIni(argv[1]) << endl;
     return 0;
 }

@@ -3,12 +3,14 @@
 
 #include <string>
 
+using namespace std;
+
 class NoIniSettingFound{};
 class InvalidParameter{};
 
-int ex_atoi(){
+int ex_atoi(char *param){
     int num = 0;
-    for(char *ch = argv[2]; (*ch)!='\0'; ch++){
+    for(char *ch = param; (*ch)!='\0'; ch++){
         if((*ch)<'0' || (*ch)>'9')
             throw InvalidParameter();
         num = (num*10) + (*ch) - '0';
@@ -18,7 +20,7 @@ int ex_atoi(){
 
 string getPortIni(
 #ifndef axis
-const string &axis
+char *axis
 #endif
 ){
 	unsigned int port = GetPrivateProfileInt("Ports", axis, 0, ".\\settings.ini");

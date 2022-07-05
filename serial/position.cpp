@@ -2,6 +2,7 @@
 #include <string>
 #include <Windows.h>
 #include "portController.h"
+#include "common.h"
 
 using namespace std;
 
