@@ -1,5 +1,5 @@
 CC = g++
-FLAGS = -m32 -std=c++11
+FLAGS = -m32 -std=c++11 -Os
 
 all: move.inc move.abs position port.get port.set
 

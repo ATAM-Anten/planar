@@ -3,14 +3,12 @@
 
 #include <string>
 #include <Windows.h>
+#include <iostream>
 using namespace std;
-
-class NoIniSettingFound{};
-class InvalidParameter{};
 
 int ex_atoi(char *param);
 
-string getPortIni(
+unsigned int getPortIni(
 #ifndef axis
 char *axis
 #endif

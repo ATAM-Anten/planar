@@ -1,5 +1,5 @@
 CC = g++
-FLAGS = -m32 -std=c++11
+FLAGS = -m32 -std=c++11 -Os
 
 LL = -lws2_32
 

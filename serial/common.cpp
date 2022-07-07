@@ -5,20 +5,22 @@ int ex_atoi(char *param){
     int num = 0;
     for(char *ch = param; (*ch)!='\0'; ch++){
         if((*ch)<'0' || (*ch)>'9')
-            throw InvalidParameter();
+            cerr << "Invalid parameter" << endl;
+            exit(0);
         num = (num*10) + (*ch) - '0';
     }
     return num;
 }
 
-string getPortIni(
+unsigned int getPortIni(
 #ifndef axis
 char *axis
 #endif
 ){
 	unsigned int port = GetPrivateProfileInt("Ports", axis, 0, ".\\settings.ini");
 	if (port==0){
-		throw NoIniSettingFound();
+		cerr << ".ini setting not found" << endl;
+        exit(0);
 	}
-	return to_string(port);
+	return port;
 }
