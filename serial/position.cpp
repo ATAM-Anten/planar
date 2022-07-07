@@ -7,8 +7,12 @@
 using namespace std;
 
 int main(int argc, char **argv){
-    PortController ser("\\\\.\\COM"+getPortIni());
-    ser.writeData("PFB\r\n");
-    cout << "Position: " << ser.readData() << endl;
+    try{
+        PortController ser("\\\\.\\COM"+getPortIni());
+        ser.writeData("PFB\r\n");
+        cout << "Position: " << ser.readData() << endl;
+    } catch (PortControllerException err){
+        cerr << err.getMessage();
+    }
     return 0;
 }
