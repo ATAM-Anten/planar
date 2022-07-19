@@ -2,13 +2,17 @@
 using namespace std;
 
 int ex_atoi(char *param){
-    int num = 0;
+    int num = 0, sign=1;
+    if(param[0]=='-'){
+        sign=-1;
+        param++;
+    }
     for(char *ch = param; (*ch)!='\0'; ch++){
         if((*ch)<'0' || (*ch)>'9'){
             cerr << "Invalid parameter" << endl;
             exit(0);
         }
-        num = (num*10) + (*ch) - '0';
+        num = (num*10) + ((*ch) - '0')*sign;
     }
     return num;
 }
