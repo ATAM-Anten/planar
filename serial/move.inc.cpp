@@ -15,7 +15,7 @@ int main(int argc, char **argv){
     ex_atoi(argv[1]);
     ex_atoi(argv[2]);
     try{
-        PortController ser("\\\\.\\COM"+getPortIni());
+        PortController ser("\\\\.\\COM"+to_string(getPortIni()));
         ser.writeData("ORDER 201 " + string(argv[1]) + " " + string(argv[2]) + " 8193 50 50 0 0 0 0\r\nMOVE 201");
     } catch (PortControllerException err){
         cerr << err.getMessage();

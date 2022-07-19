@@ -10,7 +10,7 @@ PortControllerException::~PortControllerException() {}
 string PortControllerException::getMessage() const {return(msg);}
 
 PortController::PortController(const string& port){
-	rs232 = CreateFileA (&port[0], GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, 0, 0);
+	rs232 = CreateFile (port.c_str(), GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, 0, 0);
 	if (rs232 == INVALID_HANDLE_VALUE){
 		throw PortControllerException("CreateFile");
 	}

@@ -9,8 +9,7 @@ using namespace std;
 int main(int argc, char **argv){
     try{
         PortController ser("\\\\.\\COM"+to_string(getPortIni()));
-        ser.writeData("PFB\r\n");
-        cout << "Position: " << ser.readData() << endl;
+        ser.writeData("MH\r\n");
     } catch (PortControllerException err){
         cerr << err.getMessage();
     }

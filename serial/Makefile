@@ -1,9 +1,9 @@
 CC = g++
 FLAGS = -m32 -std=c++11 -Os
 
-all: move.inc move.abs position port.get port.set
+all: move.inc move.abs position port.get port.set home
 
-move.inc move.abs position: portController.o x.common.o y.common.o
+move.inc move.abs position home: portController.o x.common.o y.common.o
 	$(CC) $(FLAGS) -c -Daxis='"X"' $@.cpp -o x.$@.o
 	$(CC) $(FLAGS) -c -Daxis='"Y"' $@.cpp -o y.$@.o
 	$(CC) $(FLAGS) x.$@.o x.common.o portController.o -o ../x.$@.exe
