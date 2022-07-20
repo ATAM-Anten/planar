@@ -1,11 +1,14 @@
 #include <iostream>
 #include "common_modbus.h"
+#include "param.h"
 
 using namespace std;
 
 int main(int argc, char **argv){
-    common_modbus mb;
+	string help = "This program will get the position and 2 alarm values.";
+	params(argc, argv, help);
 	
+    common_modbus mb;
     uint16_t h_alarm[1], l_alarm[1];
     union int_arr position;
     mb.read_holding_register_loop(204, 2, position.uint16);

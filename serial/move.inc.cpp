@@ -3,11 +3,14 @@
 #include <Windows.h>
 #include "portController.h"
 #include "common.h"
+#include "../param.h"
 
 using namespace std;
 
 int main(int argc, char **argv){
     // First parameter is position, second parameter is speed, third parameter is acceleration
+	string help = "This program will move the motor exactly by the given arguments. \
+First parameter is position, second parameter is speed, third parameter is acceleration.";
     if(argc<4){
         cerr << "This program works with at least 3 arguments!" << endl;
         return 0;

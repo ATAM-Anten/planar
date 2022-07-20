@@ -1,9 +1,12 @@
 #include <iostream>
 #include "common_modbus.h"
+#include "param.h"
 
 using namespace std;
 
 int main(int argc, char **argv){
+	string help = "This program will get the approximate current speed of the motor.";
+	params(argc, argv, help);
     common_modbus mb;
 	
     uint16_t h_alarm[1], l_alarm[1];

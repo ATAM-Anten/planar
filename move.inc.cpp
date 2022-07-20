@@ -1,9 +1,12 @@
 #include <iostream>
 #include "common_modbus.h"
+#include "param.h"
 
 using namespace std;
 
 int main(int argc, char **argv){
+	string help = "This program will move the motor exactly by the given argument.";
+	params(argc, argv, help);
 	if(argc!=2){
 		cout << "This program works with 1 parameter" << endl;
 		return 0;
